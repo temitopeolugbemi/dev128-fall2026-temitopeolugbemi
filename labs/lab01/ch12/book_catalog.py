@@ -1,5 +1,7 @@
 # Starting file for Lab 1 - Chapter 12 - book_catalog.py program
-# Include your name, date, and class in the assignment comments (replace this line)
+# Name: Temitope Olugbemi
+# Date: 10-18-2026
+# Class: Dev 128
 
 def show_book(book_catalog):
     title = input("Title: ")
@@ -40,10 +42,16 @@ def delete_book(book_catalog):
     else:
         print(f"{title} doesn't exist in the catalog.")
 
+def list_book(book_catalog):
+
+    for title, details in book_catalog.items():
+        print(f"\nTitle: {title}\nAuthor: {details['author']}\nPub year: {details['pubyear']}\n")
+
 def display_menu():
     print("The Book Catalog program")
     print()
     print("COMMAND MENU")
+    print("list - list all books")
     print("show - Show book info")
     print("add -  Add book")
     print("edit - Edit book")
@@ -66,7 +74,9 @@ def main():
     while True:
         print()
         command = input("Command: ").lower()
-        if command == "show":
+        if command == "list":
+            list_book(book_catalog)
+        elif command == "show":
             show_book(book_catalog)
         elif command == "add":
             add_edit_book(book_catalog, mode="add")

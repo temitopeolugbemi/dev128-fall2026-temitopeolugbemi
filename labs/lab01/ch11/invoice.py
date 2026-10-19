@@ -1,12 +1,26 @@
 # Starting file for Lab 1 Chapter 11 invoice.py program
-# Include your name, date, and class in the assignment comments (replace this line)
+# Name: Temitope Olugbemi
+# Date: 10-18-2026
+# Class: Dev 128
 
 from datetime import datetime, timedelta
 
 def get_invoice_date():
-    invoice_date_str = input("Enter the invoice date (MM/DD/YY): ")    
-    invoice_date = datetime.strptime(invoice_date_str, "%m/%d/%y")
-    return invoice_date
+    while True:
+        invoice_date_str = input("Enter the invoice date (MM/DD/YYYY): ")    
+        try:
+            invoice_date = datetime.strptime(invoice_date_str, "%m/%d/%Y")
+        except ValueError:
+            print("Invalid date format! Try again.")
+            print()
+            continue
+
+        today = datetime.now();
+        if today < invoice_date:
+            print("Date must be today or earlier. Try again.")
+            print()
+        else:
+            return invoice_date
 
 def main():
     print("The Invoice Due Date program")
@@ -35,8 +49,12 @@ def main():
         print()
 
         # ask if user wants to continue
-        again = input("Continue? (y/n): ")
-        print()
+        while True:
+            again = input("Continue? (y/n): ").strip().lower()
+            if again in ("y", "n"):
+                break
+            print("Invalid input. Enter y or n.")
+            print()
         
     print("Bye!")      
 
