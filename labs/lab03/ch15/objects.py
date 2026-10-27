@@ -1,5 +1,7 @@
 # Starting file for Lab 3 - objects.py
-# Include your name, class, and date in the assignment comment header
+# Name: Temitope S. Olugbemi
+# Date: 10-27-2026
+# Class: Dev 128
 
 from dataclasses import dataclass
 
@@ -18,16 +20,35 @@ class Product:
     def getDescription(self):
         return self.name
 
+# Intermediateclass inheriting from Product
+class Media(Product):
+    def __init__(self, name:str = "", price:float = 0.0, discountPercent:int = 0, format:str = ""):
+        super().__init__(name, price, discountPercent)
+        self.format = format
+
 @dataclass
-class Book(Product):
-    author:str = ""
+class Book(Media):
+
+    def __init__(self, name:str = "", price:float = 0.0, discountPercent:int = 0, author:str = "", format:str = ""):
+        super().__init__(name, price, discountPercent, format)
+        self.author = author
 
     def getDescription(self):
         return f"{Product.getDescription(self)} by {self.author}"
 
 @dataclass        
-class Movie(Product):
-    year:int = 0
-
+class Movie(Media):
+    def __init__(self, name:str = "", price:float = 0.0, discountPercent:int = 0, year:int = 0, format:str = ""):
+        super().__init__(name, price, discountPercent, format)
+        self.year = year
     def getDescription(self):
         return f"{Product.getDescription(self)} ({self.year})"
+
+@dataclass
+class Album(Media):
+    def __init__(self, name:str = "", price:float = 0.0, discountPercent:int = 0, artist:str = "", format:str = ""):
+        super().__init__(name, price, discountPercent, format)
+        self.artist = artist
+
+    def getDescription(self):
+        return f"{Product.getDescription(self)} by {self.artist}"
