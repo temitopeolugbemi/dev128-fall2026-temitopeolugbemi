@@ -1,0 +1,10 @@
+first_name,last_name,email,phone,street_address,city,state,zip_code
+Carol,Danvers,carol@marvel.com,555-222-1111,1233 Michigan Ave,Boston,MA,02108
+Tony,Stark,tony@marvel.com,555-222-1234,10880 Malibu Point,Malibu,CA,90265
+Peter,Parker,spidey@dailybugle.net,555-987-6543,20 Ingram Street,Queens,NY,11375
+Steve,Rogers,cap@avengers.org,555-194-1945,569 Leaman Place,Brooklyn,NY,11201
+Natasha,Romanoff,widow@avengers.org,555-333-4444,100 Shield Way,New York,NY,10001
+Bruce,Banner,bruce@marvel.com,555-444-5555,100 Science Parkway,Dayton,OH,45401
+Wanda,Maximoff,wanda@marvel.com,555-666-7777,45 Westview Lane,Westview,NJ,07090
+Thor,Odinson,thor@marvel.com,555-888-9999,1 Asgard Way,Oklahoma City,OK,73101
+Clint,Barton,hawkeye@marvel.com,555-333-2222,78 Farmhouse Road,Iowa City,IA,52240
